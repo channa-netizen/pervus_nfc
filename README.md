@@ -20,3 +20,17 @@ Approval is intentionally manual for the first test:
 - set that row's `approved` value to true.
 
 A private moderation interface can be added after the upload pipeline is verified.
+
+
+## Phase 4 — Pervus Control Room
+`admin.html` is a private moderation UI using Supabase Auth. It does not contain an admin password or service-role key.
+
+Before it can moderate:
+1. Create your admin user in Supabase Authentication.
+2. Copy that user's UUID.
+3. Replace `YOUR_ADMIN_USER_UUID` in `CONTROL_ROOM_SETUP.sql`.
+4. Run the SQL with RLS enabled.
+5. Visit `admin.html` and sign in.
+
+Approve copies the pending image to `pervus-approved`, marks the sighting approved, then removes the pending copy.
+Reject deletes the pending image and database row.
