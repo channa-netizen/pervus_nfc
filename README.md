@@ -1,12 +1,8 @@
-# Nervous Pervus NFC Portal
+# Nervous Pervus NFC Portal — Phase 2
+GitHub Pages frontend + Supabase guestbook.
 
-Static GitHub Pages front end for the Nervous Pervus NFC experience.
+Upload all files to the root of `pervus_nfc`, replacing existing files.
 
-## Deploy
-Upload all files in this package to the root of the `pervus_nfc` repository. GitHub Pages should publish from `main` / root.
+Guestbook submissions are inserted with `approved=false`. Approve entries in Supabase Table Editor by changing the `approved` field to true. Only approved rows are publicly readable.
 
-## Social links
-Edit `config.js` to set the creator Instagram and TikTok URLs.
-
-## Next phase
-Connect the Guestbook and Pervus in the Wild photo uploads to Supabase with moderation before public display.
+The browser contains only the Supabase publishable key. Never place a service-role/secret key or database password in this repository.
