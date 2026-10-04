@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090812"><title>Pervus in the Wild</title><link rel="stylesheet" href="style.css"></head><body><main class="shell"><a class="back" href="index.html">← BACK TO PERVUS</a><h1 class="page-title gradient">PERVUS<br>IN THE WILD</h1><p class="intro">Photo sightings are next. Uploads will be held for approval before they ever appear publicly.</p><section class="panel"><div class="empty">📸 PHOTO TRANSMISSION SYSTEM COMING IN PHASE 3</div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090812">
+  <title>Pervus in the Wild</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+<main class="shell">
+  <a class="back" href="index.html">← BACK TO PERVUS</a>
+
+  <header class="wild-head">
+    <div class="found">DOCUMENT THE ENCOUNTER</div>
+    <h1 class="page-title gradient">PERVUS<br>IN THE WILD</h1>
+    <p class="intro">Caught him outside containment? Submit photographic evidence. Pervus reviews every transmission before it becomes public.</p>
+  </header>
+
+  <section class="panel upload-panel">
+    <form id="sightingForm">
+      <input id="photo" type="file" accept="image/jpeg,image/png,image/webp" hidden required>
+
+      <button class="photo-picker" id="photoPicker" type="button">
+        <div id="pickerEmpty">
+          <div class="camera-orb">📸</div>
+          <strong>CHOOSE OR TAKE A PHOTO</strong>
+          <small>JPEG, PNG or WebP • processed before upload</small>
+        </div>
+        <img id="preview" alt="Selected Pervus sighting preview">
+        <div class="change-photo" id="changePhoto">TAP TO CHANGE PHOTO</div>
+      </button>
+
+      <div class="privacy-note">
+        <span>🔒</span>
+        <div><strong>PRIVATE UNTIL APPROVED</strong><small>The original photo stays on your phone. The uploaded copy is resized and re-encoded to remove embedded metadata.</small></div>
+      </div>
+
+      <label for="name">YOUR NAME / NICKNAME</label>
+      <input id="name" maxlength="40" required placeholder="Space Goblin">
+
+      <label for="location">WHERE WAS PERVUS SPOTTED?</label>
+      <input id="location" maxlength="80" placeholder="Seven Stars, the woods, another dimension...">
+
+      <label for="caption">WHAT WAS HE DOING?</label>
+      <textarea id="caption" maxlength="500" placeholder="He looked nervous. I approached carefully."></textarea>
+      <div class="char-count"><span id="charCount">0</span>/500</div>
+
+      <button class="submit" id="submitBtn" type="submit">TRANSMIT PERVUS SIGHTING</button>
+      <div class="status" id="status" role="status"></div>
+      <div class="progress-wrap" id="progressWrap"><div class="progress" id="progress"></div></div>
+    </form>
+  </section>
+
+  <div class="divider"><span>CONFIRMED PERVUS SIGHTINGS</span></div>
+  <div class="gallery-count" id="galleryCount">SEARCHING THE ARCHIVES...</div>
+  <section class="wild-grid" id="gallery"></section>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button id="lightboxClose" aria-label="Close image">×</button>
+  <img id="lightboxImage" alt="">
+  <div id="lightboxInfo"></div>
+</div>
+
+<script src="config.js"></script>
+<script src="upload.js"></script>
+</body>
+</html>
