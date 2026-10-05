@@ -10,3 +10,95 @@
 
 @media(max-width:520px){.art-shell{width:min(100% - 24px,760px)}.manifesto-panel,.present-panel,.play-panel,.origin-panel,.moment-panel,.wild-panel,.final-clock,.whatif-panel,.identity-panel,.breath-panel,.chaos-panel,.stop-panel,.imposter-panel,.inspire-panel,.social-panel{padding:28px 18px}.project-card{grid-template-columns:112px 1fr}.project-image{height:155px}.project-image img{max-width:96px;max-height:145px}.project-image.pervus img{max-width:112px}.artist-socials{grid-template-columns:1fr}.clock-stage{min-height:125vw}.portal-feature{grid-template-columns:95px 1fr}.feature-image{height:135px}.feature-image img{max-width:82px;max-height:130px}}
 @media(prefers-reduced-motion:reduce){.clock-aura{animation:none}}
+
+/* PHASE 8 — intentional clock rhythm + more of the actual human */
+.refined-clock .art-shell{max-width:720px}
+.refined-clock .manifesto-panel,
+.refined-clock .present-panel,
+.refined-clock .play-panel,
+.refined-clock .origin-panel,
+.refined-clock .moment-panel,
+.refined-clock .wild-panel,
+.refined-clock .final-clock{
+  padding:38px 28px;
+  margin:22px 0;
+  border-radius:28px;
+}
+.refined-clock .section-tag{margin-bottom:16px}
+.refined-clock h2{
+  font-size:clamp(40px,10.5vw,64px);
+  line-height:.91;
+  margin:8px 0 25px;
+}
+.refined-clock .art-shell p{
+  font-size:16px;
+  line-height:1.72;
+  max-width:590px;
+}
+.refined-clock .statement,
+.refined-clock .clock-emphasis{
+  font-size:clamp(27px,7vw,42px);
+  line-height:1.02;
+  font-weight:1000;
+  letter-spacing:-.035em;
+  margin:34px auto 6px;
+  padding:25px 8px;
+  max-width:640px;
+  border-top:1px solid #ff53bc42;
+  border-bottom:1px solid #5cefff3d;
+  color:#fff;
+}
+.refined-clock .clock-emphasis strong{
+  background:linear-gradient(90deg,#68f7ff,#a17fff,#ff50bd,#ffe56b);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.refined-clock .delay-section{padding:58px 10px}
+.refined-clock .delay-word{
+  font-size:clamp(50px,12vw,78px);
+  line-height:.88;
+  margin:2px 0;
+}
+.refined-clock .delay-word.dim{font-size:clamp(43px,10.5vw,68px)}
+.refined-clock .delay-section h2{font-size:clamp(37px,9.5vw,58px)}
+.refined-clock .spend-section{padding:64px 18px}
+.refined-clock .spend-section h2{font-size:clamp(37px,9.5vw,58px);line-height:.93}
+.refined-clock .spend{
+  font-size:clamp(58px,14vw,90px);
+  line-height:.79;
+  margin:30px auto 38px;
+}
+.refined-clock .final-emphasis{font-size:clamp(52px,13vw,88px);line-height:.78;border:0;padding:0}
+.refined-clock .giant-line,.refined-clock .whatif,.refined-clock .make-it{font-size:inherit}
+.refined-clock .moment-lines span{font-size:12px}
+.refined-clock blockquote{font-size:clamp(34px,8.5vw,52px);line-height:.94}
+
+/* Artist page: recurring mascot art, not emoji decoration */
+.pervus-clip{display:block;object-fit:contain;filter:drop-shadow(0 0 12px #00eaff7d) drop-shadow(0 0 24px #ff37b66b)}
+.hero-clip{width:min(72%,330px);margin:-12px auto 4px;transform:rotate(2deg)}
+.footer-clip{width:min(54%,240px);margin:28px auto -2px}
+.artist-mantra{
+  margin:30px auto 4px;
+  padding:24px 10px;
+  max-width:620px;
+  border-top:1px solid #ff53bc45;
+  border-bottom:1px solid #5cefff42;
+  font-size:clamp(28px,7.5vw,45px);
+  line-height:1;
+  font-weight:1000;
+  letter-spacing:-.04em;
+}
+.artist-mantra strong{background:linear-gradient(90deg,#6df7ff,#a580ff,#ff55c1,#ffe66c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.artist-mantra.cyan{color:#77f6ff;text-shadow:0 0 20px #00eaff35}
+.next-year-panel{
+  border:1px solid #ff45b34d;border-radius:30px;padding:32px 24px;margin:18px 0;
+  background:linear-gradient(145deg,#ff2cad10,#6d35ff0b 48%,#08050dcc);
+  box-shadow:inset 0 0 30px #ff00aa08,0 0 35px #ff00aa0b
+}
+.quiet-truth{color:#a9a2b2!important;font-size:14px!important;max-width:540px!important}
+.real-me .statement{font-size:clamp(27px,7vw,42px)}
+@media(max-width:520px){
+  .refined-clock .manifesto-panel,.refined-clock .present-panel,.refined-clock .play-panel,
+  .refined-clock .origin-panel,.refined-clock .moment-panel,.refined-clock .wild-panel,
+  .refined-clock .final-clock{padding:30px 18px}
+  .next-year-panel{padding:28px 18px}
+}
