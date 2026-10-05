@@ -1,0 +1,36 @@
+PERVUS.SPACE — PHASE 10 / USER FEEDBACK REBAKE
+
+CLOCK PAGE
+- Past / Future / Present are now plain columns, not button-looking cards.
+- Reworked NEXT WEEK / NEXT MONTH / NEXT YEAR into a human-readable passage.
+- Removed the giant-small-rainbow-big rhythm from that section.
+- Kept “IT'S SOMETHING TO SPEND” as one of the rare intentional large thesis moments.
+- Rebuilt “Your Turn” as prose. Removed PUSH / CHANGE / MAKE button-looking cards.
+- “Be curious” is now a quiet emphasis rather than another poster headline.
+- Removed the pill UI from “Someone might find it.”
+- Removed the entire “Out in the World” section.
+- Neon is now more atmosphere; full gradient type is reserved for actual payoff moments.
+
+ARTIST PAGE
+- No decorative Pervus image on the artist page. Pervus remains only in his project card.
+- Combined the opening creative-philosophy material into one continuous editorial chapter.
+- Reduced big/small/big/small typography switching.
+- Removed the entire “I kept saying NEXT YEAR / So I asked anyway” section.
+- Polished the “I don't always believe I belong here” section.
+- Removed button-looking BUILD IT / SUBMIT IT / PUT IT OUT THERE / BE NERVOUS AS FUCK cards.
+- Those lines now read as simple typography.
+- “Maybe the belief catches up later” is a quiet ending.
+
+INDEX PAGE
+Requested order is now:
+1. Pervus content
+2. Encounter count
+3. “The Human Responsible for This”
+4. Instagram + TikTok
+5. Time Is an Illusion clock feature
+6. Artist block closes the page
+
+TECH
+- Existing config.js/app.js IDs preserved.
+- Existing guestbook/upload/admin/Supabase functionality untouched.
+- Cache-busted art stylesheet remains separate from the core functional stylesheet.

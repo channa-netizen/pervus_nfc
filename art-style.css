@@ -206,3 +206,159 @@
   .artist-page .next-year-panel,.artist-page .imposter-panel,.artist-page .inspire-panel,
   .artist-page .social-panel{padding:26px 18px}
 }
+
+
+/* PHASE 10 — feedback rebake
+   Human prose first. Neon is atmosphere. Large type is punctuation. */
+
+/* Shared editorial rhythm */
+.clock-page .human-copy,.clock-page .human-section,
+.artist-page .human-section,.artist-page .artist-story{
+  max-width:660px;
+  margin:18px auto;
+}
+.clock-page .human-copy p,.clock-page .human-section p,
+.artist-page .human-section p,.artist-page .artist-story p{
+  max-width:570px;
+  font-size:16px;
+  line-height:1.72;
+}
+.quiet-impact{
+  margin:30px auto!important;
+  padding:20px 0;
+  border-top:1px solid #ffffff18;
+  border-bottom:1px solid #ffffff18;
+  font-size:19px!important;
+  line-height:1.5!important;
+  color:#f0ebf3!important;
+}
+.quiet-impact strong{color:#75f6ff}
+.clock-page .section-tag,.artist-page .section-tag{
+  color:#8e8797!important;
+  text-shadow:none!important;
+}
+
+/* Clock: no fake buttons */
+.time-three-plain{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin:30px auto;
+  max-width:560px;
+}
+.time-three-plain div{
+  padding:8px 5px;
+  background:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.time-three-plain div+div{border-left:1px solid #ffffff18!important}
+.time-three-plain small,.time-three-plain b{display:block}
+.time-three-plain small{font-size:8px;letter-spacing:.15em;color:#77717e}
+.time-three-plain b{font-size:13px;margin-top:7px}
+.time-three-plain .now b{color:#73f7ff}
+
+/* Clock: human delay passage */
+.clock-page .delay-section{padding:52px 12px}
+.delay-hook{
+  font-size:clamp(43px,10vw,64px);
+  line-height:.88;
+  font-weight:1000;
+  letter-spacing:-.055em;
+  margin:0 auto 34px;
+  color:#ff9bd7;
+}
+.clock-page .delay-section .quiet-impact{max-width:590px}
+
+/* Clock: thesis gets the rare giant treatment */
+.clock-page .spend-section{padding:58px 15px}
+.clock-page .spend-section>p{font-size:16px;line-height:1.72;max-width:560px}
+.clock-page .spend{
+  font-size:clamp(54px,12vw,78px);
+  line-height:.82;
+  margin:28px auto 34px;
+}
+
+/* Clock interaction + moment: prose, not UI */
+.clock-page .play-panel h2{font-size:clamp(34px,8vw,48px)}
+.clock-page .moment-panel .quiet-impact strong{color:#ff72ca}
+.moment-lines,.play-grid{display:none!important}
+
+/* Artist: first ideas are one continuous reading section */
+.artist-story{
+  padding:40px 24px;
+  border-top:1px solid #ffffff16;
+  border-bottom:1px solid #ffffff16;
+}
+.artist-story h2{
+  font-size:clamp(40px,9vw,56px);
+  margin:8px 0 24px;
+}
+.artist-story h3{
+  font-size:clamp(24px,5.5vw,32px);
+  line-height:1.1;
+  margin:44px auto 15px;
+  color:#fff;
+  letter-spacing:-.025em;
+}
+.artist-story .quiet-impact{
+  font-size:21px!important;
+  color:#79f6ff!important;
+  font-weight:800;
+}
+
+/* Artist: imposter section is the emotional center, not a dashboard */
+.artist-page .imposter-panel{padding:38px 26px}
+.artist-page .imposter-panel h2{margin-bottom:27px}
+.belief-line{
+  font-size:21px!important;
+  line-height:1.35!important;
+  font-weight:900;
+  color:#78f5ff!important;
+  margin:31px auto 22px!important;
+}
+.plain-progression{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin:24px auto;
+  max-width:430px;
+}
+.plain-progression span{
+  border:0!important;
+  background:none!important;
+  border-radius:0!important;
+  padding:3px!important;
+  font-size:clamp(21px,5vw,29px);
+  line-height:1.08;
+  font-weight:1000;
+  color:#aaa4af;
+}
+.plain-progression span:last-child{color:#fff}
+.quiet-ending{
+  margin-top:30px!important;
+  color:#9f98a7!important;
+  font-size:14px!important;
+  line-height:1.65!important;
+}
+.quiet-ending strong{font-size:17px;color:#fff}
+
+/* Index requested order */
+.encounter-break{
+  margin:31px 0 28px!important;
+  padding-bottom:26px;
+  border-bottom:1px solid #ffffff12;
+}
+.portal-shell .divider{margin-top:0}
+.portal-shell .creator{margin-bottom:12px}
+.portal-shell .portal-feature{margin:12px 0}
+.portal-shell .closing-door{margin:12px 0 0}
+
+/* Artist page has no decorative Pervus. Pervus remains only as project art. */
+.artist-page .pervus-clip{display:none!important}
+
+@media(max-width:520px){
+  .artist-story{padding:34px 18px}
+  .artist-page .imposter-panel{padding:30px 18px}
+}
