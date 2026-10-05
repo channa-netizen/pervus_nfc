@@ -425,3 +425,144 @@
   .artist-page .projects::before{margin-bottom:38px;padding:0 10px}
   .artist-page .social-panel{padding:54px 10px 24px}
 }
+
+/* =========================================================
+   ARTIST PAGE — v12 BALANCED PANELS
+   No horizontal chapter rules. Three intentional atmospheres.
+   ========================================================= */
+
+/* Kill the divider system completely on the artist narrative. */
+.artist-page .artist-story,
+.artist-page .artist-story + .artist-story,
+.artist-page .chaos-panel,
+.artist-page .imposter-panel,
+.artist-page .inspire-panel,
+.artist-page .projects,
+.artist-page .social-panel{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+
+/* Opening story stays completely open. */
+.artist-page .artist-story{
+  padding:50px 20px;
+  margin:0 auto;
+  background:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.artist-page .artist-story + .artist-story{
+  padding-top:42px;
+}
+.artist-page .artist-story:nth-of-type(2) h2 span{
+  color:#ff79c9;
+}
+
+/* Quiet impacts are typography, never little divider sandwiches. */
+.artist-page .quiet-impact{
+  border:0!important;
+  padding:0!important;
+  margin:31px auto!important;
+}
+
+/* PANEL 1 — what I'm chasing: restrained magenta atmosphere. */
+.artist-page .chaos-panel{
+  margin:28px auto 22px;
+  padding:54px 28px;
+  border:1px solid #ff5abd38!important;
+  border-radius:27px;
+  background:
+    radial-gradient(circle at 15% 0%,#ff2fac16 0,transparent 38%),
+    linear-gradient(145deg,#ff2cad0b,#6d35ff08 52%,#08050d99);
+  box-shadow:inset 0 0 34px #ff00aa06,0 0 34px #ff00aa08;
+}
+.artist-page .chaos-panel h2 span{color:#ff79c9}
+.artist-page .chaos-panel blockquote{
+  color:#ff70c9;
+  text-shadow:0 0 18px #ff35b43a;
+}
+
+/* PANEL 2 — doubt: cooler and more inward. */
+.artist-page .imposter-panel{
+  margin:22px auto;
+  padding:56px 28px;
+  border:1px solid #55edff38!important;
+  border-radius:27px;
+  background:
+    radial-gradient(circle at 85% 5%,#00eaff12 0,transparent 38%),
+    linear-gradient(145deg,#00eaff0b,#5334ff08 54%,#08050d99);
+  box-shadow:inset 0 0 34px #00eaff05,0 0 34px #00eaff08;
+}
+.artist-page .imposter-panel h2 span{color:#75f5ff}
+
+/* PANEL 3 — payoff: strongest atmosphere, still not a billboard. */
+.artist-page .inspire-panel{
+  margin:22px auto 0;
+  padding:62px 28px;
+  border:1px solid #c25aff42!important;
+  border-radius:27px;
+  background:
+    radial-gradient(circle at 20% 0%,#ff37b719 0,transparent 38%),
+    radial-gradient(circle at 90% 90%,#6844ff14 0,transparent 42%),
+    linear-gradient(145deg,#7e24a512,#30155a12 55%,#08050da6);
+  box-shadow:inset 0 0 42px #ff00aa07,0 0 40px #8f42ff09;
+}
+.artist-page .inspire-panel h2{
+  font-size:clamp(44px,10vw,62px);
+  line-height:.88;
+}
+.artist-page .inspire-panel h2 span{
+  background:linear-gradient(90deg,#65f5ff,#a083ff 34%,#ff58bf 70%,#ffe36a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 10px #ff38b52b);
+}
+
+/* No CSS-written transition copy. Space does the transition. */
+.artist-page .projects::before{content:none!important;display:none!important}
+.artist-page .projects{
+  margin:0 auto;
+  padding:86px 0 34px;
+  border:0!important;
+}
+.artist-page .projects .section-tag{margin-bottom:15px!important}
+.artist-page .projects>h2{margin-bottom:34px}
+
+/* Project cards are the boxes in this chapter. */
+.artist-page .project-card{
+  border:1px solid #ffffff20;
+  background:linear-gradient(135deg,#ffffff0b,#ffffff06);
+  border-radius:24px;
+}
+.artist-page .clock-card{border-color:#ff65c32b}
+.artist-page .pervus-card{border-color:#62efff2b}
+
+/* Closing panel: quiet, compact, clearly intentional. */
+.artist-page .social-panel{
+  margin:38px auto 0;
+  padding:48px 24px 30px;
+  border:1px solid #ffffff18!important;
+  border-radius:24px;
+  background:linear-gradient(145deg,#ffffff07,#00eaff04 52%,#ff2fad05);
+  box-shadow:none;
+}
+.artist-page .social-panel h2 span{color:#75f5ff}
+
+/* Keep all chapter separation spatial, not line-based. */
+.artist-page .chaos-panel + .imposter-panel,
+.artist-page .imposter-panel + .inspire-panel{
+  border-top:1px solid transparent!important;
+}
+
+/* Mobile */
+@media(max-width:520px){
+  .artist-page .artist-story{padding:43px 12px}
+  .artist-page .artist-story + .artist-story{padding-top:34px}
+  .artist-page .chaos-panel,
+  .artist-page .imposter-panel,
+  .artist-page .inspire-panel{padding:46px 19px;margin-left:0;margin-right:0}
+  .artist-page .projects{padding-top:70px}
+  .artist-page .social-panel{padding:44px 18px 28px}
+}

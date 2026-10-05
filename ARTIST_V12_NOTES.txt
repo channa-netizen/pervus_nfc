@@ -1,0 +1,17 @@
+Artist page v12 — balanced panels
+
+- Removed ALL horizontal chapter-divider lines on the artist page.
+- WHAT IF WE + WHO I AM remain open editorial prose.
+- WHAT I'M CHASING gets a restrained magenta atmospheric panel.
+- THE VOICE IN MY HEAD gets a restrained cyan atmospheric panel.
+- MAKE THE FUCKING THING gets the strongest purple/magenta payoff panel.
+- Removed the CSS-generated “Anyway…” transition line.
+- THE RABBIT HOLES returns to open space; project cards provide structure.
+- COME FIND ME gets a compact closing panel.
+- Quiet-impact text no longer has top/bottom rules.
+- Existing clock-page rules remain untouched because all v12 changes are scoped to .artist-page.
+- Cache bust updated to v12.
+
+Upload as:
+artist-v12.html -> artist.html
+art-style-v12.css -> art-style.css
