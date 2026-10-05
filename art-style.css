@@ -362,3 +362,66 @@
   .artist-story{padding:34px 18px}
   .artist-page .imposter-panel{padding:30px 18px}
 }
+
+/* =========================================================
+   ARTIST PAGE — CLEAN EDITORIAL REBAKE v11
+   Neon is atmosphere. Big type is punctuation.
+   ========================================================= */
+.artist-page .art-shell{width:min(100% - 30px,700px);padding-bottom:56px}
+.artist-page .artist-opening{padding:20px 0 72px}
+.artist-page .artist-opening .eyebrow{color:#ff77ce;text-shadow:0 0 14px #ff00a85c}
+.artist-page .artist-opening h1{font-size:clamp(62px,15vw,94px);line-height:.80;margin:16px 0 24px}
+.artist-page .artist-thesis{font-size:clamp(28px,6.7vw,40px);line-height:.98;margin:0 auto 26px}
+.artist-page .artist-opening>p{max-width:570px;margin:0 auto;color:#c9c3d2;font-size:16px;line-height:1.7}
+
+.artist-page .section-tag{margin:0 0 14px!important;color:#8f8998!important;font-size:9px;letter-spacing:.20em}
+.artist-page h2{color:#fff;font-size:clamp(36px,8.3vw,50px);line-height:.94;letter-spacing:-.045em;margin:6px 0 25px}
+.artist-page h2 span{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff;filter:none}
+
+.artist-page .artist-story{max-width:640px;margin:0 auto;padding:54px 20px;border:0;background:none;box-shadow:none;border-radius:0}
+.artist-page .artist-story + .artist-story{border-top:1px solid #ffffff14}
+.artist-page .artist-story p,.artist-page .chaos-panel p,.artist-page .imposter-panel p,.artist-page .inspire-panel p{max-width:570px;margin:17px auto;font-size:16px;line-height:1.76;color:#c9c3d2}
+.artist-page .artist-story:nth-of-type(2) h2 span{color:#ff79c9}
+
+.artist-page .quiet-impact{max-width:560px!important;margin:30px auto 0!important;padding:0!important;border:0!important;color:#76f5ff!important;font-size:18px!important;line-height:1.5!important;font-weight:800}
+.artist-page .quiet-impact strong{color:inherit}
+
+.artist-page .chaos-panel,.artist-page .imposter-panel,.artist-page .inspire-panel{max-width:640px;margin:0 auto;padding:58px 20px;border:0;border-top:1px solid #ffffff14;border-radius:0;background:none;box-shadow:none}
+.artist-page .chaos-panel h2 span{color:#ff79c9}
+.artist-page .chaos-panel blockquote{margin:34px auto;font-size:clamp(30px,7vw,42px);line-height:.98;color:#ff67c6;background:none;-webkit-background-clip:initial;background-clip:initial;filter:none}
+
+.artist-page .imposter-panel{margin-top:12px;padding:58px 28px;border:1px solid #55edff36;border-radius:26px;background:linear-gradient(145deg,#00eaff08,#6b36ff08 55%,#08050d80);box-shadow:0 0 38px #00eaff08}
+.artist-page .imposter-panel h2 span{color:#76f5ff}
+.artist-page .belief-line{max-width:520px;margin:32px auto 23px!important;color:#75f5ff!important;font-size:19px!important;line-height:1.42!important;font-weight:900}
+.artist-page .plain-progression{margin:26px auto 30px;gap:6px}
+.artist-page .plain-progression span{color:#8e8894;font-size:clamp(20px,4.8vw,27px)}
+.artist-page .plain-progression span:nth-child(3){color:#c8c2cc}
+.artist-page .plain-progression span:last-child{color:#fff}
+.artist-page .quiet-ending{margin:27px auto 0!important;font-size:14px!important;color:#918b98!important}
+.artist-page .quiet-ending strong{color:#fff;font-size:16px}
+
+.artist-page .inspire-panel{padding-top:76px;padding-bottom:72px}
+.artist-page .inspire-panel h2{font-size:clamp(44px,10vw,62px);line-height:.88;margin-bottom:30px}
+.artist-page .inspire-panel h2 span{background:linear-gradient(90deg,#64f5ff,#9d82ff 34%,#ff55bd 70%,#ffe36a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px #ff38b52b)}
+
+.artist-page .projects::before{content:"Anyway… here’s some of the weird shit that escaped my head.";display:block;max-width:520px;margin:0 auto 48px;color:#8e8795;font-size:14px;line-height:1.65;font-style:italic}
+.artist-page .projects{max-width:660px;margin:0 auto;padding:64px 0 30px;border-top:1px solid #ffffff14}
+.artist-page .projects>h2{font-size:clamp(38px,8.8vw,54px);line-height:.92;margin-bottom:30px}
+.artist-page .projects>h2 span{background:linear-gradient(90deg,#65f5ff,#a083ff 36%,#ff5abd 72%,#ffe16c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.artist-page .project-card{border-color:#ffffff1d;background:linear-gradient(135deg,#ffffff0a,#ffffff05);box-shadow:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.artist-page .project-card:hover{transform:translateY(-2px);border-color:#75f5ff45;background:linear-gradient(135deg,#ffffff0e,#00eaff07)}
+
+.artist-page .social-panel{max-width:640px;margin:28px auto 0;padding:66px 20px 28px;border:0;border-top:1px solid #ffffff14;border-radius:0;background:none;box-shadow:none}
+.artist-page .social-panel h2{font-size:clamp(34px,7.8vw,48px)}
+.artist-page .social-panel h2 span{color:#76f5ff}
+.artist-page .artist-socials a{transition:transform .18s ease,border-color .18s ease}
+.artist-page .artist-socials a:hover{transform:translateY(-2px);border-color:#75f5ff4d}
+
+@media(max-width:520px){
+  .artist-page .artist-opening{padding-bottom:58px}
+  .artist-page .artist-story,.artist-page .chaos-panel,.artist-page .inspire-panel{padding:46px 12px}
+  .artist-page .imposter-panel{padding:46px 18px}
+  .artist-page .projects{padding-top:54px}
+  .artist-page .projects::before{margin-bottom:38px;padding:0 10px}
+  .artist-page .social-panel{padding:54px 10px 24px}
+}

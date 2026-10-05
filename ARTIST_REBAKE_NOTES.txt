@@ -1,0 +1,13 @@
+Artist clean rebake v11
+- Removed double divider sandwiches.
+- Converted most narrative panels into one continuous editorial flow.
+- Kept a restrained cyan frame only around the imposter section.
+- Reduced rainbow headline use to major payoff moments.
+- Normalized body copy, heading scale, spacing, and accent colors.
+- Quiet-impact lines are now typography rather than mini-panels.
+- Added a human transition into The Rabbit Holes.
+- Project cards remain cards because they are interactive objects.
+- Clock styles remain untouched; new overrides are scoped to .artist-page.
+- artist.html cache-bust updated to art-style.css?v=11.
+
+Rename art-style-v11.css to art-style.css and artist-v11.html to artist.html when uploading.
