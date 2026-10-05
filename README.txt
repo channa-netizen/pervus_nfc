@@ -1,12 +1,20 @@
-PERVUS.SPACE — PHASE 6 NEON ART UNIVERSE
+PERVUS.SPACE — PHASE 7 / FULL REBAKE
 
-Upload these files to the ROOT of channa-netizen/pervus_nfc:
-- index.html (replaces current index)
-- artist.html
-- time-is-an-illusion.html
-- art-style.css
+This build uses the material Chad supplied about Time Is an Illusion, the Seven Stars application,
+the CONNECT letter, the Seven Stars post, and the creative philosophy behind the work.
+
+UPLOAD TO THE ROOT OF THE GITHUB REPO:
+- index.html (replace)
+- art-style.css (new/replace)
+- artist.html (new/replace)
+- time-is-an-illusion.html (new/replace)
 - clock-hero.webp
+- pervus-hero.webp
 
-No existing guestbook/upload/admin files need to change.
-The two new art pages use their own art-style.css, so the neon theme does not disturb the working Pervus pages.
-The clock hero was optimized from the supplied sticker artwork and given a transparent background for the neon page.
+Leave the working guestbook/upload/admin/config/app files alone.
+
+The existing index still uses the same pervusInstagram, creatorInstagram, creatorTikTok and
+encounters IDs, plus config.js/app.js, so the existing portal behavior remains wired in.
+
+This is intentionally the DEEP version. Dial back copy/sections after seeing it live rather than
+layering small revisions onto the previous concept.
