@@ -102,3 +102,107 @@
   .refined-clock .final-clock{padding:30px 18px}
   .next-year-panel{padding:28px 18px}
 }
+
+
+/* PHASE 9 — STREAMLINED TYPOGRAPHY
+   One hierarchy across the clock + artist pages:
+   eyebrow -> section heading -> body -> rare emphasis.
+   No decorative Pervus art on artist page. */
+.clock-page .art-shell,.artist-page .art-shell{width:min(100% - 28px,700px)}
+.clock-page .section-tag,.artist-page .section-tag{
+  font-size:10px;
+  letter-spacing:.18em;
+  margin:0 0 13px;
+  color:#a99fb1;
+  text-shadow:none;
+}
+.clock-page h2,.artist-page h2{
+  font-size:clamp(34px,8.6vw,52px);
+  line-height:.94;
+  letter-spacing:-.045em;
+  margin:6px 0 22px;
+}
+.clock-page .art-shell p,.artist-page .art-shell p{
+  font-size:15.5px;
+  line-height:1.68;
+  margin:15px auto;
+}
+.clock-page .manifesto-panel,.clock-page .present-panel,.clock-page .play-panel,
+.clock-page .origin-panel,.clock-page .moment-panel,.clock-page .wild-panel,
+.clock-page .final-clock,.artist-page .whatif-panel,.artist-page .identity-panel,
+.artist-page .breath-panel,.artist-page .chaos-panel,.artist-page .stop-panel,
+.artist-page .next-year-panel,.artist-page .imposter-panel,.artist-page .inspire-panel,
+.artist-page .social-panel{
+  padding:32px 24px;
+  margin:16px 0;
+  border-radius:24px;
+}
+.clock-page .statement,.clock-page .clock-emphasis,
+.artist-page .statement,.artist-page .artist-mantra{
+  font-size:clamp(23px,5.8vw,34px);
+  line-height:1.06;
+  letter-spacing:-.025em;
+  padding:21px 8px;
+  margin:26px auto 4px;
+}
+.clock-page .delay-section{padding:44px 10px}
+.clock-page .delay-word{
+  font-size:clamp(42px,10vw,62px);
+  line-height:.91;
+  margin:1px 0;
+}
+.clock-page .delay-word.dim{font-size:clamp(36px,8.8vw,54px)}
+.clock-page .delay-section h2{font-size:clamp(33px,8vw,48px);margin-top:30px}
+.clock-page .spend-section{padding:48px 14px}
+.clock-page .spend-section h2{font-size:clamp(32px,7.8vw,46px)}
+.clock-page .spend{
+  font-size:clamp(49px,11vw,70px);
+  line-height:.84;
+  margin:24px auto 30px;
+}
+.clock-page .final-emphasis{
+  font-size:clamp(45px,10.5vw,70px);
+  line-height:.82;
+  padding:0;
+  margin:30px auto 18px;
+}
+.clock-page blockquote,.artist-page blockquote{
+  font-size:clamp(28px,6.8vw,40px);
+  line-height:1;
+  margin:27px 0;
+}
+.artist-page .whatif.huge{
+  font-size:clamp(48px,11vw,70px);
+  line-height:.86;
+  margin:23px 0;
+}
+.artist-page .whoa{
+  font-size:clamp(38px,9vw,58px);
+  line-height:.87;
+  margin:26px 0;
+}
+.artist-page .do-list span{
+  font-size:clamp(21px,5.5vw,31px);
+  padding:10px;
+}
+.artist-page .artist-opening h1{
+  font-size:clamp(60px,15vw,92px);
+  margin-bottom:22px;
+}
+.artist-page .artist-thesis{
+  font-size:clamp(27px,6.8vw,40px);
+  margin:8px 0 24px;
+}
+.artist-page .projects{margin:42px 0}
+.artist-page .projects>h2{font-size:clamp(34px,8.6vw,52px)}
+/* kill old decorative artist-page clip rules */
+.artist-page .pervus-clip{display:none!important}
+
+@media(max-width:520px){
+  .clock-page .manifesto-panel,.clock-page .present-panel,.clock-page .play-panel,
+  .clock-page .origin-panel,.clock-page .moment-panel,.clock-page .wild-panel,
+  .clock-page .final-clock,.artist-page .whatif-panel,.artist-page .identity-panel,
+  .artist-page .breath-panel,.artist-page .chaos-panel,.artist-page .stop-panel,
+  .artist-page .next-year-panel,.artist-page .imposter-panel,.artist-page .inspire-panel,
+  .artist-page .social-panel{padding:26px 18px}
+}

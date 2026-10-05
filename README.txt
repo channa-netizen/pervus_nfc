@@ -1,13 +1,11 @@
-PERVUS.SPACE — PHASE 8 / REFINED REBAKE
+PERVUS.SPACE — PHASE 9 / STREAMLINED
 
-Changes from Phase 7:
-- Clock page visual hierarchy cleaned up: consistent headline scale, consistent emphasis treatment,
-  fewer competing typography styles, and more intentional neon color use.
-- Artist page now carries much more of Chad's actual story: the CONNECT "next year" cycle,
-  making art as a place for the mind to breathe, gratitude even when he doesn't feel deserving,
-  and the hope that seeing him try gives someone else permission to try.
-- Nervous Pervus artwork is now recurring clip art on the artist page, including the hero,
-  rather than relying on an alien/character emoji.
-- Existing portal IDs/scripts and Supabase functionality remain untouched.
+- Removed decorative Pervus artwork from the artist page. Pervus remains only where he belongs:
+  as the Pervus project thumbnail/card.
+- Flattened the typography hierarchy on BOTH clock and artist pages.
+- Reduced headline jumps, oversized callouts, panel padding, and competing emphasis styles.
+- Big type is now reserved for actual payoff moments.
+- Copy/content from Phase 8 remains intact.
+- Existing portal/Supabase behavior remains untouched.
 
-Upload all files in this ZIP to the repository root. Replace matching files.
+Upload all files to repo root and replace matching files.
