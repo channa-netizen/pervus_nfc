@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#090812">
   <meta name="robots" content="noindex,nofollow">
   <title>Pervus Control Room</title>
-  <link rel="stylesheet" href="style.css?v=14">
-  <link rel="stylesheet" href="admin.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="admin.css?v=15">
 </head>
 <body>
 <main class="shell control-shell">
@@ -64,6 +64,19 @@
     </div>
     <section id="commentQueue" class="queue"></section>
 
+    <div class="queue-head" style="margin-top:38px">
+      <strong>REPLY AS PERVUS · PUBLISHED ENTRIES</strong>
+    </div>
+    <div class="reply-switch" role="group" aria-label="Published entries">
+      <button id="showGuestReplies" type="button" class="active">GUESTBOOK</button>
+      <button id="showPhotoReplies" type="button">PHOTOS</button>
+    </div>
+    <div class="reply-toolbar">
+      <span id="publishedCount">LOADING PUBLISHED ENTRIES...</span>
+      <button id="refreshPublished" type="button">↻ REFRESH</button>
+    </div>
+    <section id="publishedQueue" class="queue"></section>
+
   </section>
 </main>
 
@@ -78,7 +91,7 @@
   </div>
 </div>
 
-<script src="config.js?v=14"></script>
-<script src="admin.js?v=14"></script>
+<script src="config.js?v=15"></script>
+<script src="admin.js?v=15"></script>
 </body>
 </html>

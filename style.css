@@ -14,3 +14,9 @@ input,textarea{text-align:center}
 .about-story .rhythm{font-size:19px;font-weight:900;color:#fff;line-height:1.55}
 .about-story blockquote{margin:30px 0 8px;padding:22px 12px;border-top:1px solid #ffffff1b;border-bottom:1px solid #ffffff1b;font-size:23px;font-weight:1000;line-height:1.35;background:linear-gradient(90deg,#70f5ff,#9c83ff 34%,#ff73cb 68%,#ffe566);background-clip:text;-webkit-background-clip:text;color:transparent}
 .about-story blockquote span{font-size:16px}.about-home{display:block;text-decoration:none}
+
+/* One public reply per encounter */
+.pervus-public-reply{margin:16px 0 2px;padding:13px 15px;border-left:3px solid #70f5ff;border-radius:0 13px 13px 0;background:linear-gradient(110deg,#70f5ff13,#ff73cb0a);text-align:left}
+.pervus-public-reply strong{display:block;color:#83f4ff;font-size:11px;letter-spacing:.12em;text-align:left}
+.pervus-public-reply p{margin:8px 0 0!important;color:#eee8f3!important;line-height:1.55!important;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}
+#lightboxInfo .pervus-public-reply{max-width:520px;margin:12px auto 0}

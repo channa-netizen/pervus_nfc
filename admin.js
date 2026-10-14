@@ -60,6 +60,7 @@ function showAdmin() {
   document.getElementById("adminEmail").textContent =
     session?.user?.email || "";
   loadQueue();
+  loadPublished();
 }
 
 async function refreshSession() {
@@ -173,7 +174,7 @@ document.getElementById("logoutBtn").onclick = async () => {
   showLogin("Signed out.");
 };
 
-document.getElementById("refreshBtn").onclick = loadQueue;
+document.getElementById("refreshBtn").onclick = () => { loadQueue(); loadPublished(); };
 
 // PRIVATE PHOTOS
 
@@ -577,3 +578,95 @@ async function rejectSighting(x) {
 
   showLogin();
 })();
+
+
+// PERVUS REPLIES: ONE REPLY PER PUBLISHED ENTRY
+const publishedQueue = document.getElementById("publishedQueue");
+let publishedType = "guestbook";
+let publishedRequest = 0;
+
+function setPublishedType(type) {
+  publishedType = type;
+  document.getElementById("showGuestReplies").classList.toggle("active", type === "guestbook");
+  document.getElementById("showPhotoReplies").classList.toggle("active", type === "photos");
+  loadPublished();
+}
+document.getElementById("showGuestReplies").onclick = () => setPublishedType("guestbook");
+document.getElementById("showPhotoReplies").onclick = () => setPublishedType("photos");
+document.getElementById("refreshPublished").onclick = loadPublished;
+
+async function loadPublished() {
+  const request = ++publishedRequest;
+  const isPhoto = publishedType === "photos";
+  const table = isPhoto ? "pervus_sightings" : "guestbook";
+  publishedQueue.innerHTML = '<div class="empty-queue">Checking published encounters...</div>';
+  document.getElementById("publishedCount").textContent = "LOADING...";
+  try {
+    const fields = isPhoto
+      ? "id,display_name,location,caption,image_path,created_at,pervus_reply,pervus_replied_at"
+      : "id,display_name,location,message,created_at,pervus_reply,pervus_replied_at";
+    const r = await api(`${REST}/${table}?select=${fields}&approved=eq.true&order=created_at.desc&limit=100`);
+    await checked(r, "Published entries unavailable");
+    const rows = await r.json();
+    if (request !== publishedRequest) return;
+    document.getElementById("publishedCount").textContent = `${rows.length} PUBLISHED ${isPhoto ? "PHOTOS" : "COMMENTS"}`;
+    if (!rows.length) {
+      publishedQueue.innerHTML = '<div class="empty-queue">Nothing published here yet.</div>';
+      return;
+    }
+    publishedQueue.innerHTML = "";
+    for (const x of rows) {
+      const card = document.createElement("article");
+      card.className = "review-card published-card";
+      const photo = isPhoto
+        ? `<img loading="lazy" class="reply-photo" src="${esc(`${c.supabaseUrl}/storage/v1/object/public/pervus-approved/${encodeURIComponent(x.image_path)}`)}" alt="Approved sighting">`
+        : "";
+      card.innerHTML = `${photo}<div class="review-body">
+        <div class="review-top"><strong>${esc(x.display_name || "Anonymous")}</strong>
+        <small>${esc(x.location || "")}</small></div>
+        <p class="review-caption">${esc(isPhoto ? x.caption || "Photo encounter" : x.message || "")}</p>
+        <label class="reply-label">👽 PERVUS'S REPLY</label>
+        <textarea class="pervus-reply-input" maxlength="600" rows="3" placeholder="What does the nervous little bastard have to say?">${esc(x.pervus_reply || "")}</textarea>
+        <div class="reply-status" aria-live="polite"></div>
+        <div class="reply-actions"><button class="reply-remove" type="button" ${x.pervus_reply ? "" : "disabled"}>REMOVE REPLY</button>
+        <button class="reply-save" type="button">SAVE REPLY</button></div></div>`;
+      const input = card.querySelector("textarea");
+      const status = card.querySelector(".reply-status");
+      const save = card.querySelector(".reply-save");
+      const remove = card.querySelector(".reply-remove");
+      async function persist(value) {
+        const reply = value.trim();
+        if (reply.length > 600) { status.textContent = "Reply is too long."; return; }
+        save.disabled = true; remove.disabled = true;
+        status.textContent = "Saving Pervus's thoughts...";
+        try {
+          const r = await api(`${REST}/${table}?id=eq.${encodeURIComponent(x.id)}&approved=eq.true`, {
+            method: "PATCH",
+            headers: { Prefer: "return=representation" },
+            body: JSON.stringify({ pervus_reply: reply || null, pervus_replied_at: reply ? new Date().toISOString() : null })
+          });
+          await checked(r, "Could not save Pervus reply");
+          const updated = await r.json();
+          if (updated.length !== 1) throw new Error("No row updated. Check admin RLS permissions.");
+          x.pervus_reply = reply || null;
+          input.value = reply;
+          status.textContent = reply ? "✓ Pervus has spoken." : "✓ Reply removed.";
+        } catch (e) {
+          status.textContent = e.message || "Reply failed.";
+        } finally {
+          save.disabled = false;
+          remove.disabled = !x.pervus_reply;
+        }
+      }
+      save.onclick = () => persist(input.value);
+      remove.onclick = () => {
+        if (confirm("Remove Pervus's reply from this entry?")) persist("");
+      };
+      publishedQueue.appendChild(card);
+    }
+  } catch (e) {
+    if (request !== publishedRequest) return;
+    document.getElementById("publishedCount").textContent = "PUBLISHED ENTRIES ERROR";
+    publishedQueue.innerHTML = `<div class="empty-queue">${esc(e.message)}</div>`;
+  }
+}

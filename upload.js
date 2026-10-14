@@ -64,7 +64,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&
 async function loadGallery(){
   const box=document.getElementById("gallery"), count=document.getElementById("galleryCount");
   try{
-    const r=await fetch(`${c.supabaseUrl}/rest/v1/pervus_sightings?select=display_name,location,caption,image_path,created_at&approved=eq.true&order=created_at.desc&limit=60`,{headers:{"apikey":c.supabaseKey}});
+    const r=await fetch(`${c.supabaseUrl}/rest/v1/pervus_sightings?select=display_name,location,caption,image_path,created_at,pervus_reply,pervus_replied_at&approved=eq.true&order=created_at.desc&limit=60`,{headers:{"apikey":c.supabaseKey}});
     if(!r.ok)throw new Error(await r.text());const rows=await r.json();
     count.textContent=rows.length?`${rows.length} CONFIRMED SIGHTING${rows.length===1?"":"S"}`:"NO CONFIRMED SIGHTINGS YET";
     if(!rows.length){box.innerHTML='<div class="gallery-empty">No approved photographic evidence yet.<br>Pervus remains difficult to document.</div>';return;}
@@ -73,7 +73,7 @@ async function loadGallery(){
   }catch(err){console.error(err);count.textContent="ARCHIVE CONNECTION LOST";box.innerHTML='<div class="gallery-empty">Pervus cannot access the sighting archive right now.</div>';}
 }
 const lightbox=document.getElementById("lightbox");
-function openLightbox(x){document.getElementById("lightboxImage").src=`${c.supabaseUrl}/storage/v1/object/public/pervus-approved/${encodeURIComponent(x.image_path)}`;document.getElementById("lightboxInfo").innerHTML=`<strong>${esc(x.display_name)}</strong><small>${esc(x.location||"Location classified")} • ${new Date(x.created_at).toLocaleDateString()}</small>${x.caption?`<p>${esc(x.caption)}</p>`:""}`;lightbox.classList.add("open");lightbox.setAttribute("aria-hidden","false");}
+function openLightbox(x){document.getElementById("lightboxImage").src=`${c.supabaseUrl}/storage/v1/object/public/pervus-approved/${encodeURIComponent(x.image_path)}`;document.getElementById("lightboxInfo").innerHTML=`<strong>${esc(x.display_name)}</strong><small>${esc(x.location||"Location classified")} • ${new Date(x.created_at).toLocaleDateString()}</small>${x.caption?`<p>${esc(x.caption)}</p>`:""}${x.pervus_reply?`<div class="pervus-public-reply"><strong>👽 PERVUS REPLIED</strong><p>${esc(x.pervus_reply)}</p></div>`:""}`;lightbox.classList.add("open");lightbox.setAttribute("aria-hidden","false");}
 function closeLightbox(){lightbox.classList.remove("open");lightbox.setAttribute("aria-hidden","true");}
 document.getElementById("lightboxClose").onclick=closeLightbox;lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
 loadGallery();
